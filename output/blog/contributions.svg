@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="480" height="160" preserveAspectRatio="xMinYMin meet" viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="480" height="160"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-160)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="480" height="160" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="0" y="148" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(8%,17%,21%); stroke:none;" transform="translate(0,296) scale(1,-1)">Consumption change, decomposed by final hidden neuron</text>
+			<path d="M 43,39.2 L 475,39.2 Z" style="stroke: rgb(86%,89%,90%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="18.768" y="36.2" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,72) scale(1,-1)">-0.02</text>
+			<path d="M 43,64 L 475,64 Z" style="stroke: rgb(86%,89%,90%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="32.552" y="61.0" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,122) scale(1,-1)">0</text>
+			<path d="M 43,88.8 L 475,88.8 Z" style="stroke: rgb(86%,89%,90%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="16.759999999999998" y="85.79999999999998" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,171) scale(1,-1)">+0.02</text>
+			<path d="M 43,113.6 L 475,113.6 Z" style="stroke: rgb(86%,89%,90%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="16.759999999999998" y="110.6" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,221) scale(1,-1)">+0.04</text>
+			<rect x="49.5" y="64.0" width="14.0" height="24.172178852664786" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,47%); fill-rule: evenodd;"/>
+			<text x="54.275999999999996" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">0</text>
+			<rect x="76.5" y="40.47438689051357" width="14.0" height="23.52561310948643" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,29%,18%); fill-rule: evenodd;"/>
+			<text x="81.276" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">1</text>
+			<rect x="103.5" y="48.527807677557206" width="14.0" height="15.472192322442794" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,29%,18%); fill-rule: evenodd;"/>
+			<text x="108.276" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">2</text>
+			<rect x="130.5" y="54.89653399581242" width="14.0" height="9.103466004187581" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,29%,18%); fill-rule: evenodd;"/>
+			<text x="135.276" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">3</text>
+			<rect x="157.5" y="64.0" width="14.0" height="51.975885560375175" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,47%); fill-rule: evenodd;"/>
+			<text x="162.276" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">4</text>
+			<circle cx="191.5" cy="64.0" r="1.6" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,41%,45%); fill-rule: evenodd;"/>
+			<text x="189.276" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">5</text>
+			<rect x="211.5" y="64.0" width="14.0" height="0.05175327324016621" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,47%); fill-rule: evenodd;"/>
+			<text x="216.276" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">6</text>
+			<rect x="238.5" y="64.0" width="14.0" height="14.571939246057326" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,47%); fill-rule: evenodd;"/>
+			<text x="243.276" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">7</text>
+			<rect x="265.5" y="54.926807678877" width="14.0" height="9.073192321123003" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,29%,18%); fill-rule: evenodd;"/>
+			<text x="270.276" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">8</text>
+			<rect x="292.5" y="64.0" width="14.0" height="1.4157668314616672" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,47%); fill-rule: evenodd;"/>
+			<text x="297.276" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">9</text>
+			<rect x="319.5" y="64.0" width="14.0" height="11.670222232701548" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,47%); fill-rule: evenodd;"/>
+			<text x="322.052" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">10</text>
+			<rect x="346.5" y="63.55786623246105" width="14.0" height="0.44213376753894806" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,29%,18%); fill-rule: evenodd;"/>
+			<text x="349.052" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">11</text>
+			<circle cx="380.5" cy="64.0" r="1.6" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,41%,45%); fill-rule: evenodd;"/>
+			<text x="376.052" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">12</text>
+			<rect x="400.5" y="64.0" width="14.0" height="19.913030975343247" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,47%); fill-rule: evenodd;"/>
+			<text x="403.052" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">13</text>
+			<rect x="427.5" y="64.0" width="14.0" height="0.8245008541996555" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,47%); fill-rule: evenodd;"/>
+			<text x="430.052" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">14</text>
+			<rect x="454.5" y="47.03764486646419" width="14.0" height="16.96235513353581" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(69%,29%,18%); fill-rule: evenodd;"/>
+			<text x="457.052" y="19" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,38) scale(1,-1)">15</text>
+			<text x="291.93600000000004" y="4" style="font-family: Helvetica; font-size: 8px;fill: rgb(32%,41%,45%); stroke:none;" transform="translate(0,8) scale(1,-1)">Neuron index (H2); vertical units: model consumption</text>
+		</g>
+	</g>
+</svg>

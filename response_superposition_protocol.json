@@ -1,0 +1,9 @@
+{
+ "version":1,"frozen_before_training":true,"scope":"Autoencoder of six independent DSGE consumption-response features; not a policy solver or hardness proof",
+ "teacher":{"alpha":0.36,"beta":0.96,"depreciation":1,"k":1,"utility":"six separate log-utility economies, equal log weights, no transfers","consumption":"(1-alpha*beta)*z*k**alpha","next_capital":"alpha*beta*z*k**alpha","normalization":"x=(c-c0)/c0=exp(logz)-1"},
+ "data":{"train_seed":701,"test_seed":702,"train_n":4096,"singleton_test_n_per_feature":128,"pair_test_n":1024,"sparse_test_n":4096,"active_amplitude":[0.8,1.2],"train":"90% singleton, 10% zero, sector chosen uniformly","sparse_test":"independent Bernoulli probability 0.05 for each feature","pair_test":"two distinct uniformly chosen features; distribution shift"},
+ "training":{"seeds":[11,23,47],"widths":[2,6],"steps":12000,"pilot_steps":1000,"batch_size":128,"learning_rate":0.003,"optimizer":"Adam beta1=.9 beta2=.999 epsilon=1e-8","initialization":"independent normal matrices, standard deviation 0.4; zero decoder bias","architecture":"h=Wenc*x; xhat=ReLU(Wdec*h+b); untied weights","loss":"mean squared error across six features","retries":0},
+ "gates":{"every_feature_active_relative_rmse_max":0.1,"every_feature_combined_inactive_relative_rmse_max":0.1,"singleton_mse_ratio_to_train_fit_pca_max":0.5,"singleton_mse_ratio_to_coordinate_reference_max":0.5,"encoder_rank":2,"minimum_column_norm":0.001,"maximum_absolute_pair_cosine":0.9999,"all_three_seeds_required":true},
+ "interventions":"Add/remove Wenc[:,i]*delta then decode; compare with actual input edit. Linear encoding equality is an algebra check, not mechanism discovery. Measure decoded error and unaffected-output leakage for isolated and singleton contexts.",
+ "baseline":"TRAIN-centered best rank-2 PCA reconstructed then clipped nonnegative; coordinate reference retains two largest TRAIN second-moment coordinates"
+}

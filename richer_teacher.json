@@ -1,0 +1,526 @@
+{
+  "schema_version": 1,
+  "status": "numerically_solved_and_checked",
+  "parameters": {
+    "alpha": 0.36,
+    "beta": 0.96,
+    "delta": 0.08,
+    "sigma": 2.0,
+    "phi": 1.0,
+    "kappa": 2.0,
+    "rho": 0.9,
+    "innovation_std": 0.03,
+    "labor_rho": 0.7,
+    "labor_innovation_std": 0.04,
+    "nss": 0.33,
+    "kss": 1.7974464354373658,
+    "yss": 0.6074703230876287,
+    "css": 0.46367460825263945,
+    "chi": 16.605445549758368
+  },
+  "model": {
+    "production": "y=exp(logz)*k^alpha*n^(1-alpha)",
+    "utility": "c^(1-sigma)/(1-sigma)-chi*exp(eta)*n^(1+phi)/(1+phi)",
+    "resource": "c+i+(kappa/2)*k*(i/k-delta)^2=y",
+    "capital": "kprime=(1-delta)*k+i",
+    "labor_foc": "chi*exp(eta)*n^phi=c^-sigma*(1-alpha)*y/n",
+    "investment_foc": "q=1+kappa*(i/k-delta)",
+    "euler": "c^-sigma*q=beta*E[cprime^-sigma*(MPKprime+(1-delta)*qprime-Phi_k_prime)]",
+    "installation_partial_k_at_fixed_investment": "Phi_k=(kappa/2)*(delta^2-(i/k)^2)",
+    "derivation": "Envelope V_k=mu*(MPK-Phi_k)+beta*(1-delta)*E[V_k_prime]; investment FOC beta*E[V_k_prime]=mu*q.",
+    "constraints": "k>0,c>0,n>0; labor has no hours cap; investment can be negative; q positive on audited domains"
+  },
+  "numerical_scope": {
+    "method": "endogenous-grid policy time iteration with intertemporal Markov expectations and nested current-capital root",
+    "qualification": "Converged first-order equations with fresh residual and grid checks; global Bellman optimality was not established.",
+    "shocks": "7 productivity x 3 labor-disutility Rouwenhorst product chain; 21 discrete states",
+    "core_sample_domain_over_kss": [
+      0.5,
+      1.8
+    ],
+    "capital_grid_domain_over_kss": [
+      0.08,
+      4.0
+    ],
+    "boundary_rule": "Numerical capital lower/upper constraints; no extrapolation; core diagnostics and simulation remain interior",
+    "interpolation": "piecewise-linear next-capital policy; labor and resource equations solved at each query"
+  },
+  "measured_pilot_seconds": 0.8200817500000994,
+  "coarse_solver": {
+    "points": 240,
+    "iterations": 113,
+    "seconds": 0.819866916997853,
+    "maximum_kprime_change_over_kss": 1.9777296282607632e-10,
+    "history": [
+      {
+        "iteration": 50,
+        "maximum_absolute_kprime_change_over_kss": 2.890123182787699e-06
+      },
+      {
+        "iteration": 100,
+        "maximum_absolute_kprime_change_over_kss": 1.168231799841841e-09
+      },
+      {
+        "iteration": 113,
+        "maximum_absolute_kprime_change_over_kss": 1.9777296282607632e-10
+      }
+    ],
+    "capital_spacing": "geometric",
+    "capital_domain_over_kss": [
+      0.08,
+      4.0
+    ]
+  },
+  "fine_solver": {
+    "points": 960,
+    "iterations": 78,
+    "seconds": 2.0552391669989447,
+    "maximum_kprime_change_over_kss": 1.7378525418882216e-10,
+    "history": [
+      {
+        "iteration": 50,
+        "maximum_absolute_kprime_change_over_kss": 7.544689525354609e-09
+      },
+      {
+        "iteration": 78,
+        "maximum_absolute_kprime_change_over_kss": 1.7378525418882216e-10
+      }
+    ],
+    "capital_spacing": "geometric",
+    "capital_domain_over_kss": [
+      0.08,
+      4.0
+    ]
+  },
+  "coarse_diagnostics": {
+    "samples": 12000,
+    "seed": 81002,
+    "capital_domain_over_kss": [
+      0.5,
+      1.8
+    ],
+    "shock_sampling": "uniform across all 21 finite shock states",
+    "euler_relative": {
+      "maximum": 2.847177510600929e-05,
+      "rms": 9.135668560654303e-06,
+      "absolute_quantiles": [
+        6.496211059192625e-06,
+        1.4964507961678919e-05,
+        2.1874773895917965e-05,
+        2.847177510600929e-05
+      ]
+    },
+    "euler_consumption_equivalent_relative": {
+      "maximum": 1.423558356949961e-05,
+      "rms": 4.567787373264921e-06,
+      "absolute_quantiles": [
+        3.2480897044218082e-06,
+        7.482170005745914e-06,
+        1.0937207511533265e-05,
+        1.423558356949961e-05
+      ]
+    },
+    "labor_relative": {
+      "maximum": 9.9253938401489e-14,
+      "rms": 1.0764831071586277e-14,
+      "absolute_quantiles": [
+        3.3306690738754696e-16,
+        2.886579864025407e-15,
+        6.017630838073278e-14,
+        9.9253938401489e-14
+      ]
+    },
+    "resource_absolute": {
+      "maximum": 1.1102230246251565e-16,
+      "rms": 3.9170450457308986e-17,
+      "absolute_quantiles": [
+        0.0,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16
+      ]
+    },
+    "capital_absolute": {
+      "maximum": 0.0,
+      "rms": 0.0,
+      "absolute_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "q_absolute": {
+      "maximum": 0.0,
+      "rms": 0.0,
+      "absolute_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "minimum_consumption": 0.3324166095563855,
+    "minimum_labor": 0.27396784024918097,
+    "maximum_labor": 0.40406551283477177,
+    "minimum_q": 0.8585458615166719,
+    "next_capital_domain_over_kss": [
+      0.518195405534452,
+      1.7669432249268984
+    ]
+  },
+  "fine_diagnostics": {
+    "samples": 12000,
+    "seed": 81002,
+    "capital_domain_over_kss": [
+      0.5,
+      1.8
+    ],
+    "shock_sampling": "uniform across all 21 finite shock states",
+    "euler_relative": {
+      "maximum": 1.8509783561437843e-06,
+      "rms": 5.669884024863065e-07,
+      "absolute_quantiles": [
+        4.0089549280253323e-07,
+        9.27900979030838e-07,
+        1.3715641944278548e-06,
+        1.8509783561437843e-06
+      ]
+    },
+    "euler_consumption_equivalent_relative": {
+      "maximum": 9.25487893321808e-07,
+      "rms": 2.8349402058831576e-07,
+      "absolute_quantiles": [
+        2.0044768611615638e-07,
+        4.6395016664035896e-07,
+        6.857813917615643e-07,
+        9.25487893321808e-07
+      ]
+    },
+    "labor_relative": {
+      "maximum": 9.903189379656396e-14,
+      "rms": 1.0772549272943088e-14,
+      "absolute_quantiles": [
+        3.3306690738754696e-16,
+        2.6867397195929596e-15,
+        6.084022174945858e-14,
+        9.903189379656396e-14
+      ]
+    },
+    "resource_absolute": {
+      "maximum": 1.1102230246251565e-16,
+      "rms": 3.902595802823329e-17,
+      "absolute_quantiles": [
+        0.0,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16
+      ]
+    },
+    "capital_absolute": {
+      "maximum": 0.0,
+      "rms": 0.0,
+      "absolute_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "q_absolute": {
+      "maximum": 0.0,
+      "rms": 0.0,
+      "absolute_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "minimum_consumption": 0.3324118595242976,
+    "minimum_labor": 0.27397315305528447,
+    "maximum_labor": 0.40407540043372653,
+    "minimum_q": 0.858555798964434,
+    "next_capital_domain_over_kss": [
+      0.5182009466279618,
+      1.7669546709683888
+    ]
+  },
+  "extended_diagnostics": {
+    "samples": 6000,
+    "seed": 81005,
+    "capital_domain_over_kss": [
+      0.25,
+      2.5
+    ],
+    "shock_sampling": "uniform across all 21 finite shock states",
+    "euler_relative": {
+      "maximum": 1.9417125498577548e-06,
+      "rms": 5.510856135496751e-07,
+      "absolute_quantiles": [
+        3.5039889001442504e-07,
+        9.187457593373696e-07,
+        1.447254147179944e-06,
+        1.9417125498577548e-06
+      ]
+    },
+    "euler_consumption_equivalent_relative": {
+      "maximum": 9.708548610598555e-07,
+      "rms": 2.755426210309816e-07,
+      "absolute_quantiles": [
+        1.75199398932957e-07,
+        4.5937256311079376e-07,
+        7.236262880994105e-07,
+        9.708548610598555e-07
+      ]
+    },
+    "labor_relative": {
+      "maximum": 1.2723155862204294e-13,
+      "rms": 1.1545238272434915e-14,
+      "absolute_quantiles": [
+        4.440892098500626e-16,
+        7.105427357601002e-15,
+        5.88418203051333e-14,
+        1.2723155862204294e-13
+      ]
+    },
+    "resource_absolute": {
+      "maximum": 1.1102230246251565e-16,
+      "rms": 3.6429303136519523e-17,
+      "absolute_quantiles": [
+        0.0,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16
+      ]
+    },
+    "capital_absolute": {
+      "maximum": 0.0,
+      "rms": 0.0,
+      "absolute_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "q_absolute": {
+      "maximum": 0.0,
+      "rms": 0.0,
+      "absolute_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "minimum_consumption": 0.2732015537327803,
+    "minimum_labor": 0.24802043435304358,
+    "maximum_labor": 0.45285744481585444,
+    "minimum_q": 0.8287017200242212,
+    "next_capital_domain_over_kss": [
+      0.28784799015831686,
+      2.401356303510094
+    ]
+  },
+  "grid_refinement": {
+    "c": {
+      "absolute": {
+        "maximum": 1.1330706624956832e-05,
+        "rms": 7.67674580216628e-06,
+        "absolute_quantiles": [
+          7.566811517728533e-06,
+          9.031023455285947e-06,
+          1.0221970235467781e-05,
+          1.1330706624956832e-05
+        ]
+      },
+      "relative": {
+        "maximum": 2.0019770811563475e-05,
+        "rms": 1.5864785836496264e-05,
+        "absolute_quantiles": [
+          1.5788425644536197e-05,
+          1.7742244969687348e-05,
+          1.885526527071413e-05,
+          2.0019770811563475e-05
+        ]
+      }
+    },
+    "labor": {
+      "absolute": {
+        "maximum": 1.1118419953548564e-05,
+        "rms": 7.61645840774082e-06,
+        "absolute_quantiles": [
+          7.439461716440832e-06,
+          9.025128030187845e-06,
+          1.001238269839555e-05,
+          1.1118419953548564e-05
+        ]
+      },
+      "relative": {
+        "maximum": 2.9440111364964494e-05,
+        "rms": 2.3330104464660638e-05,
+        "absolute_quantiles": [
+          2.3217820181109516e-05,
+          2.609096488628282e-05,
+          2.7727685451979235e-05,
+          2.9440111364964494e-05
+        ]
+      }
+    },
+    "investment": {
+      "absolute": {
+        "maximum": 2.603735301942578e-05,
+        "rms": 1.7319794050520233e-05,
+        "absolute_quantiles": [
+          1.7128086393536357e-05,
+          2.0814940518043557e-05,
+          2.3692971985234124e-05,
+          2.603735301942578e-05
+        ]
+      },
+      "relative": {
+        "maximum": 0.0005148319979447757,
+        "rms": 0.00013549528925694968,
+        "absolute_quantiles": [
+          0.00012390406830370404,
+          0.00017925398971517794,
+          0.0002546456282406007,
+          0.0005148319979447757
+        ]
+      }
+    },
+    "next_capital": {
+      "absolute": {
+        "maximum": 2.603735301942578e-05,
+        "rms": 1.7319794050520233e-05,
+        "absolute_quantiles": [
+          1.7128086393536357e-05,
+          2.0814940518043557e-05,
+          2.3692971985234124e-05,
+          2.603735301942578e-05
+        ]
+      },
+      "relative": {
+        "maximum": 1.5322154451213876e-05,
+        "rms": 9.050508462344102e-06,
+        "absolute_quantiles": [
+          8.49793258167475e-06,
+          1.1637527180952123e-05,
+          1.3453865072383666e-05,
+          1.5322154451213876e-05
+        ]
+      }
+    },
+    "q": {
+      "absolute": {
+        "maximum": 3.4083498226200604e-05,
+        "rms": 1.8301413650337283e-05,
+        "absolute_quantiles": [
+          1.6756540876849968e-05,
+          2.425893469215623e-05,
+          2.9015139924284395e-05,
+          3.4083498226200604e-05
+        ]
+      },
+      "relative": {
+        "maximum": 2.7835566062117678e-05,
+        "rms": 1.7975296035123457e-05,
+        "absolute_quantiles": [
+          1.7234462327209155e-05,
+          2.2328673514127042e-05,
+          2.5178631994863254e-05,
+          2.7835566062117678e-05
+        ]
+      }
+    }
+  },
+  "simulation": {
+    "paths": 100,
+    "transitions_per_path": 100,
+    "total_transitions": 10000,
+    "seed": 81004,
+    "minimum_consumption": 0.38467532207487787,
+    "labor_range": [
+      0.2949825755157746,
+      0.36620448160449526
+    ],
+    "minimum_q": 0.9358778170353719,
+    "capital_range_over_kss": [
+      0.773911662825791,
+      1.322902853635485
+    ],
+    "state_counts": [
+      48,
+      77,
+      38,
+      214,
+      373,
+      263,
+      509,
+      1072,
+      581,
+      786,
+      1614,
+      740,
+      613,
+      1370,
+      601,
+      223,
+      460,
+      261,
+      37,
+      71,
+      49
+    ],
+    "numerical_boundary_hits": 0,
+    "feasible": true
+  },
+  "structural_checks": {
+    "installation_partial_k_finite_difference_error": {
+      "maximum": 4.291025867964038e-12,
+      "rms": 1.6867727782374669e-12,
+      "absolute_quantiles": [
+        6.629827166860364e-13,
+        3.163865350264139e-12,
+        4.0192665862193166e-12,
+        4.291025867964038e-12
+      ]
+    },
+    "installation_partial_i_finite_difference_error": {
+      "maximum": 5.885847365050267e-13,
+      "rms": 1.0696301279044772e-13,
+      "absolute_quantiles": [
+        3.527039771356044e-14,
+        1.6065759833594487e-13,
+        4.469444259136423e-13,
+        5.885847365050267e-13
+      ]
+    },
+    "finite_difference_samples": 1000,
+    "finite_difference_seed": 81007,
+    "steady_state": {
+      "k": 1.7974464354373658,
+      "c": 0.46367460825263945,
+      "labor": 0.33,
+      "chi": 16.605445549758368,
+      "static_policy_consumption_error": 1.6653345369377348e-16,
+      "static_policy_labor_error": 0.0,
+      "labor_equation_absolute_error": 0.0,
+      "euler_relative_error": 0.0
+    },
+    "markov_maximum_row_mass_error": 2.220446049250313e-16,
+    "markov_stationarity_maximum_error": 8.933825901280557e-17
+  },
+  "provenance": {
+    "source": "richer_teacher.py",
+    "source_sha256": "0bc667f636d7639dbaf55d4aff8cd19896a1e81c9a4149319eb0d1107edc4227",
+    "artifact": "richer_teacher.npz",
+    "artifact_sha256": "a8c95a5a7055826bf574b7ac0c599bd4631265f701b7f7804666af20c86780c3",
+    "rouwenhorst_source": "nonlinear_teacher.py",
+    "rouwenhorst_source_sha256": "91d27bb864044b241755ebca7bc44f26c477ae232f5854a5fc92b3c5bbd631a8",
+    "numpy_version": "2.5.3",
+    "execution": "local NumPy CPU; no paid work, publication, or training"
+  },
+  "total_seconds": 3.1809780830008094
+}

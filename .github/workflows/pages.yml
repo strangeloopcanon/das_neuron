@@ -1,0 +1,51 @@
+name: Verify and publish Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish this verified revision to GitHub Pages'
+        type: boolean
+        required: true
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - run: pip install -r requirements.txt
+      - run: python -B verify_richer.py
+      - run: python -B verify_system.py
+      - run: python -B verify_response_superposition.py
+      - run: python -B verify_constructive_superposition.py
+      - run: node verify_richer_ui.js && node verify_system_ui.js && node verify_response_superposition_ui.js
+  deploy:
+    needs: verify
+    if: github.event_name == 'workflow_dispatch' && inputs.publish
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4
+        id: deployment

@@ -1,0 +1,55 @@
+{
+  "gradient_max_error": 3.017290861606625e-10,
+  "pilot": {
+    "eligible": false,
+    "selected_step": 1000,
+    "selection": "best worst-output VALIDATION checkpoint, INELIGIBLE",
+    "seconds": 0.15364770899759606,
+    "steps": 1000,
+    "curve": [
+      {
+        "step": 0,
+        "normalized_rmse": [
+          0.9391691421888407,
+          1.1167351274895234,
+          1.4353296900091677
+        ]
+      },
+      {
+        "step": 250,
+        "normalized_rmse": [
+          0.02580841406646187,
+          0.03285313099719554,
+          0.05325569255310456
+        ]
+      },
+      {
+        "step": 500,
+        "normalized_rmse": [
+          0.020726950932086048,
+          0.025679920059881137,
+          0.03398148733375847
+        ]
+      },
+      {
+        "step": 750,
+        "normalized_rmse": [
+          0.01619983953798959,
+          0.021778064452748016,
+          0.02592546917887059
+        ]
+      },
+      {
+        "step": 1000,
+        "normalized_rmse": [
+          0.01437256139345013,
+          0.017148812960046184,
+          0.02227816138914005
+        ]
+      }
+    ],
+    "parameter_count": 4611
+  },
+  "estimated_sweep_seconds": 41.484881429350935,
+  "scope": "Pilot timing and gradient verification, not an experiment result."
+}

@@ -1,0 +1,43 @@
+{
+  "model_id": "H16-seed113",
+  "capital_over_reference": 0.9983333333333333,
+  "joint_consumption_delta": 0.040335746103007275,
+  "positive_contributions": 0.10048006276293842,
+  "negative_contributions": -0.0601443166599311,
+  "unit0_contribution": 0.019493692623116763,
+  "top5_cost_contributors": {
+    "output": "consumption",
+    "low_units": [
+      3,
+      4,
+      2,
+      7,
+      10
+    ],
+    "high_units": [
+      9,
+      0,
+      8,
+      10,
+      15
+    ],
+    "intersection_count": 1,
+    "overlap_fraction": 0.2,
+    "jaccard": 0.1111111111111111
+  },
+  "scaling_removal_prediction_error": {
+    "113/16": 0.39287000946431333,
+    "229/16": 0.38844933205405396,
+    "347/16": 0.409519658926258,
+    "113/32": 0.6004793682752815,
+    "229/32": 0.5019556671376774,
+    "347/32": 0.39283330473894645,
+    "113/64": 0.38684659215049993,
+    "229/64": 0.3269479810818316,
+    "347/64": 0.34594409661838954
+  },
+  "source_hashes": {
+    "system_analysis.json": "608afd88f07fc05e1b624e15fb054f94f15f68a5c1421515ad0c8fe2cf0912d1",
+    "richer_results.json": "12432395c49d1e9b7441ff93d23275133f4af21aea24888e516b25cc1e9d39c7"
+  }
+}
