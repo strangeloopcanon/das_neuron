@@ -2,17 +2,17 @@
 
 **Economic equations, labelled neurons, and the computation between them.**
 
-**New local experiment:** [five learned features in two hidden coordinates](learned_superposition.html) · [verified readout](learned_superposition_v2_readout.md).
+**Main local experiment: [predict unseen interventions in the 387-parameter DSGE circuit](dsge_prediction.html).**
 
-[![An 18-parameter trained network learns five sector-response directions in two coordinates; the sixth feature is reconstructed poorly.](output/learned_v2/learned-features.svg)](learned_superposition.html)
+[![Automated intervention errors by edit family. Fixed-gate calculations miss some first-layer and weight-edit responses; exact network evaluation predicts all 1,200 cases. Human participants: zero.](output/dsge_prediction/intervention-errors.svg)](dsge_prediction.html)
 
-[**Open the interactive policy circuit →**](https://strangeloopcanon.github.io/das_neuron/system.html) · [**Explore six features in two coordinates →**](https://strangeloopcanon.github.io/das_neuron/response_superposition.html) · [Read the short essay](output/blog/neuron-labels.html)
+The interactive challenge supplies neuron labels, every weight and bias, normalization, baseline activations, and simulation code. Predict twelve new neuron or weight edits. Answers lock before scoring. A second condition adds a mechanism guide with worked practice examples. Both conditions permit the same computation tools.
 
-[![Consumption contributions from all 16 final hidden neurons. Click to change capital, shocks, output, and network.](output/blog/contributions.svg)](https://strangeloopcanon.github.io/das_neuron/system.html)
+**Measured so far:** 1,200 fresh automated cases. A fixed-gate calculation reaches 90.83% numeric accuracy within 0.02 training standard deviations. Exact evaluation reaches 100%. **Human participants: 0.** A fresh agent also solved all twelve assigned cases with the supplied simulator. These results test computation; the participant study tests how people use the supplied information.
 
-[![Six sector-response directions share two coordinates. Click to combine shocks and inspect the decoded responses.](output/blog/superposition.svg)](https://strangeloopcanon.github.io/das_neuron/response_superposition.html)
+[Protocol](dsge_prediction_protocol.json) · [Results and limits](dsge_prediction_report.md) · [Participant instructions](dsge_prediction_study.md) · [Explore the circuit](system.html) · [Learned superposition companion](learned_superposition.html) · [Short essay](output/blog/neuron-labels.html)
 
-GitHub shows static previews here. Click either chart for the interactive controls, equations, and every weight.
+GitHub displays a static chart. Open the linked HTML for the interactive study. This revision is local and has not been published.
 
 ## The question
 
@@ -59,12 +59,14 @@ The guarantee uses unit-amplitude singleton responses. Multiple shocks test outs
 
 ## Run locally
 
-Open `system.html`, `response_superposition.html`, or `output/blog/neuron-labels.html` directly in a browser. Each page is self-contained. No account, server, or network connection is needed for the controls.
+Open `dsge_prediction.html`, `system.html`, `response_superposition.html`, or `output/blog/neuron-labels.html` directly in a browser. Each page is self-contained. No account, server, or network connection is needed for the controls.
 
 To verify the saved evidence, install Python 3.13 and Node.js 22 or later:
 
 ```sh
 python -m pip install -r requirements.txt
+python -B verify_dsge_prediction.py
+node verify_dsge_prediction_ui.js
 python -B verify_richer.py
 python -B verify_system.py
 python -B verify_response_superposition.py

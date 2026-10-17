@@ -26,6 +26,8 @@ jobs:
         with:
           node-version: '22'
       - run: pip install -r requirements.txt
+      - run: python -B verify_dsge_prediction.py
+      - run: node verify_dsge_prediction_ui.js
       - run: python -B verify_richer.py
       - run: python -B verify_system.py
       - run: python -B verify_response_superposition.py

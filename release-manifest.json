@@ -1,7 +1,7 @@
 {
   ".github/workflows/pages.yml": {
-    "bytes": 1549,
-    "sha256": "b4471e0766e11e09572e43e8acdfbbac351588c58a451359136c3541ae58e41f"
+    "bytes": 1645,
+    "sha256": "dbfd846d16a1dc3a229e6256d0648ac41e80b3a5c4060601d69ce2cc038eb835"
   },
   ".gitignore": {
     "bytes": 45,
@@ -16,12 +16,20 @@
     "sha256": "356e96a879770f899a572b352b4f1fe0dd95df34795446f8a5098e47ca7b5598"
   },
   "README.md": {
-    "bytes": 7113,
-    "sha256": "9aafbf8350846326ea08caea2229f5efaf2ddd3fd5f16351691007514ebf79da"
+    "bytes": 7533,
+    "sha256": "b8db079fdd177c09f30cc7e39f55a1ebbc65477c3ca5449a35c54712db8e40a8"
   },
   "build_blog.py": {
     "bytes": 16404,
     "sha256": "d88544c1e8f397653e282c8f22a413a3aeae4345b4e7d7db726c961053c924f4"
+  },
+  "build_dsge_prediction_chart.py": {
+    "bytes": 2151,
+    "sha256": "6ab2e7fdcf808df7c27984ed963284aefb3af6bedd4f6060fa05955ac5d6ac90"
+  },
+  "build_dsge_prediction_page.py": {
+    "bytes": 1110,
+    "sha256": "2d275a973a00099b952fc14334f5297e77912f3248b5e78c02d7f1374b0622b1"
   },
   "build_learned_superposition_page.py": {
     "bytes": 1179,
@@ -55,9 +63,49 @@
     "bytes": 3221,
     "sha256": "da365bfadd21f0f0ad80100e1e4b5905a8d1bde520eecea008092ea0296709bd"
   },
+  "dsge_prediction.html": {
+    "bytes": 103410,
+    "sha256": "b8a33ac232c165d8bf6980cd0de967cbd30403d01030008304ff5676c868295c"
+  },
+  "dsge_prediction.js": {
+    "bytes": 9126,
+    "sha256": "00e243b4457533e45168d46b8a9cb4b1ad2d9089ae7d1efa186bead36478a2d5"
+  },
+  "dsge_prediction_baselines.json": {
+    "bytes": 12393,
+    "sha256": "eaba1e528513dc87632656088d64d41deac5a3fd7a25678f2ea39505b5171aab"
+  },
+  "dsge_prediction_experiment.py": {
+    "bytes": 6016,
+    "sha256": "d1671584aac6467c82b23d69643fdaa4003aad079b3786c5f20a849338501cbb"
+  },
+  "dsge_prediction_materials.py": {
+    "bytes": 1837,
+    "sha256": "580c0445c4c2f0d6c7691252073907f51c850c4c0ff11a84d8334efc6964ec30"
+  },
+  "dsge_prediction_protocol.json": {
+    "bytes": 3471,
+    "sha256": "50511e5f17e004a8a472a34ad0aa8a43e0b64e89c1b2085c9c517b90fb088b67"
+  },
+  "dsge_prediction_report.md": {
+    "bytes": 5103,
+    "sha256": "f7e873c057359e010b51331f26e433e252f7b335b67cd5094c8cb1664cb381e7"
+  },
+  "dsge_prediction_study.md": {
+    "bytes": 4173,
+    "sha256": "fabb8a01190fcad632e9b92547de7315c79c1a319fad8a424f12d70df0db62cd"
+  },
+  "dsge_prediction_tasks.json": {
+    "bytes": 3523414,
+    "sha256": "c8b2771c7ffbb2302ece9f5124709f5640730b360fe347a8c1088c3126430e77"
+  },
+  "dsge_prediction_template.html": {
+    "bytes": 7934,
+    "sha256": "0676b9eeabfbc0f6855b5699786a7c86c19cdac1e05ada6227f92384718f26a0"
+  },
   "index.html": {
-    "bytes": 1077726,
-    "sha256": "b6ebba107a57fb176e962399e0d2cf5cc8b2cc4ddb2e1c1ac882d05368342002"
+    "bytes": 103410,
+    "sha256": "b8a33ac232c165d8bf6980cd0de967cbd30403d01030008304ff5676c868295c"
   },
   "learned_superposition.html": {
     "bytes": 44508,
@@ -150,6 +198,14 @@
   "output/blog/superposition.svg": {
     "bytes": 3028,
     "sha256": "ea853b5ad3d06b48e26226309375e1ab78fd3b331760c09634681d2b08af295b"
+  },
+  "output/dsge_prediction/intervention-errors.png": {
+    "bytes": 90572,
+    "sha256": "0de427a48013b5090ee2ac9156661cc45189bf8a552e0f61233ea6e6b2f8dc61"
+  },
+  "output/dsge_prediction/intervention-errors.svg": {
+    "bytes": 10774,
+    "sha256": "4eab0dd9113084babe49900f8b15beed9ee9f2b3484388c77f2fa7f9f0c65bc5"
   },
   "output/learned_v2/geometry.svg": {
     "bytes": 1979,
@@ -259,6 +315,10 @@
     "bytes": 9002,
     "sha256": "c774e1c79bfa0c554651d2154470a19d9259a30ecac12365106c7af7e34fac61"
   },
+  "score_dsge_predictions.py": {
+    "bytes": 6994,
+    "sha256": "f39ef929f9588090ec5b5194ba06dd5e3cc22353097a6f7cd204627e978accb2"
+  },
   "style.css": {
     "bytes": 9912,
     "sha256": "213c11970500058a9e69184412e5ce3d6943ecd58b87e0d1d04bb66c4145fcf5"
@@ -290,6 +350,14 @@
   "verify_constructive_superposition.py": {
     "bytes": 3829,
     "sha256": "eac68e472e80f6601782fe01001d5b5a963f79a0bf3a074664b2c7174a9651a8"
+  },
+  "verify_dsge_prediction.py": {
+    "bytes": 11123,
+    "sha256": "1bb87e2d7071b024e9fe4ef128a4f3362a9c0d8b617f6c393e0cbdf7c4ed6ade"
+  },
+  "verify_dsge_prediction_ui.js": {
+    "bytes": 5077,
+    "sha256": "84173b4c0440075756909904b411f8e58874dc890dbfe13c9759a2b554d1e84a"
   },
   "verify_learned_superposition_ui.js": {
     "bytes": 3078,

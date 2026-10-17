@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "frozen before task generation; human n=0",
+  "model_id": "H16-seed113",
+  "parameter_count": 387,
+  "truth": "Actual edited frozen neural forward minus baseline, selected normalized output; not economic teacher policy",
+  "seeds": {"practice":88100,"A":88101,"B":88102,"automated":88103,"allocation":88104},
+  "banks": {"practice":2,"A":12,"B":12,"automated":1200},
+  "sampling": "Fresh capital uniform [0.5,1.8]*kss; shock state stationary over all 21 states. Reject only previously used raw input pairs, never edited outcomes. Uniform baseline-active target units; W2 upstream uniform baseline-active H1.",
+  "families": ["h1_attenuation","incoming_weight","h2_attenuation","sham"],
+  "interventions": {"attenuation_fractions":[0.25,0.5,1.0],"incoming_weight_delta":[-0.5,0.5],"incoming_weight_layers":["W1","W2"],"sham":"H1 attenuation fraction zero"},
+  "forms": "A/B matched only on family and selected output, three outputs per family; no effect matching",
+  "disclosure": "Every case exposes physical and normalized inputs/outputs and baseline p1,h1,p2,h2; both arms have complete weights, TRAIN normalization, DISCOVERY labels and generic simulation code",
+  "conditions": ["complete_model","mechanism_guide"],
+  "guide": "Adds compact gate-update/readout explanation and only two practice worked examples. No test answers or dedicated answer button. Full independent simulation allowed in both arms.",
+  "practice": "One H1 removal and one H2 removal; answers and edited traces disclosed only here",
+  "metrics": {"primary":"participant mean absolute error in TRAIN output SD units","secondary":["direction accuracy","response time","numeric accuracy"],"near_zero_threshold":0.002,"numeric_absolute_tolerance":0.02,"stratify":"all four families, including every null and sham"},
+  "baselines": ["zero_change","frozen_gate_jacobian","exact_edited_forward","h2_direct_readout_on_h2_only"],
+  "human_pilot": {"planned_completed":24,"completed":0,"cells":4,"completed_per_cell":6,"allocation":"six seeded random blocks containing all condition/form cells; slots 0..23; replacement uses the same unfilled slot","analysis":"human participant is unit; report cell means and family strata; descriptive pilot, no confirmatory significance claim; agent_smoke and demo separate"},
+  "response_schema": {"schema_version":1,"participant_kind":"human|demo|agent_smoke","participant_id":"nonempty string","slot":"integer 0..23","condition":"complete_model|mechanism_guide","form":"A|B","task_order":"permutation of all assigned form task IDs","responses":[{"task_id":"assigned form ID","prediction_sd":"finite number, TRAIN output SD delta","response_ms":"finite nonnegative number","tool_use":"string"}],"materials_ms":"finite nonnegative number","total_ms":"finite nonnegative number, at least sum response_ms + materials_ms","metadata":{"protocol_sha256":"SHA256 exact protocol bytes","tasks_sha256":"SHA256 exact task bytes","model_sha256":"canonical JSON model object hash","labels_sha256":"canonical JSON labels hash"}},
+  "exclusions": "Reject invalid hashes, incomplete/duplicate task IDs, invalid numbers, assignment mismatch, invalid participant kind, duplicate participant IDs in pooled input. No outcome-based exclusions.",
+  "scope": "No training, recruitment, publication, or human hardness inference. Automated baseline evaluations are not a human study. The complete model is mathematically sufficient for every answer."
+}
