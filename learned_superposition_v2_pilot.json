@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "cf241ef05938da343d0deaa1dd0d3619a853b6649ed263ac4e4d42eb0ad2f4be",
+  "source_sha256": "72de403c7e6e1f5eff5db9987a76072aca6fba547d8a92343e38419ee26dd2e5",
+  "gradient_max_absolute_error": 9.608816520234598e-11,
+  "pilot_steps": 1000,
+  "pilot_seconds": 0.03363891699700616,
+  "projected_total_seconds": 7.064172569371295,
+  "budget_seconds": 120,
+  "test_evaluated": false,
+  "weights_discarded": true
+}

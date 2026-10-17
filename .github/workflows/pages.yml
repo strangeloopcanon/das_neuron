@@ -30,7 +30,9 @@ jobs:
       - run: python -B verify_system.py
       - run: python -B verify_response_superposition.py
       - run: python -B verify_constructive_superposition.py
+      - run: python -B verify_learned_superposition_v2.py
       - run: node verify_richer_ui.js && node verify_system_ui.js && node verify_response_superposition_ui.js
+      - run: node verify_learned_superposition_ui.js
   deploy:
     needs: verify
     if: github.event_name == 'workflow_dispatch' && inputs.publish

@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "frozen_before_training": true,
+  "objective": "Establish working full-width response learning, then project its learned encoder and test learned six-feature superposition after two-dimensional fine-tuning.",
+  "teacher": {
+    "sectors": 6, "alpha": 0.36, "beta": 0.96, "capital": 1.0, "depreciation": 1.0,
+    "model": "Six separate log-utility Cobb-Douglas stochastic growth economies, without transfers or cross-sector interactions.",
+    "consumption": "c=(1-alpha*beta)*z*k**alpha",
+    "next_capital": "kp=alpha*beta*z*k**alpha",
+    "response": "x=(c-c0)/c0=z-1 at capital one; networks reconstruct solved consumption responses, not raw states or policy functions"
+  },
+  "data": {
+    "amplitude": [0.8, 1.2],
+    "TRAIN": {"seed": 8601, "per_feature": 2304, "zero": 1536},
+    "VALIDATION": {"seed": 8602, "per_feature": 576, "zero": 384},
+    "TEST": {"seed": 8603, "per_feature": 1152, "zero": 768},
+    "PAIR_TEST": {"seed": 8604, "per_pair": 256},
+    "SPARSE_TEST": {"seed": 8605, "n": 4096, "activity_probability": 0.05},
+    "EDIT_TEST": {"seed": 8606, "per_feature": 256},
+    "membership": "Independently seeded amplitudes, balanced sector groups, 10% zeros in the singleton distributions. Zero baseline repeats intentionally; positive singleton amplitudes must be disjoint. PAIR_TEST and SPARSE_TEST are distribution shifts."
+  },
+  "architecture": {
+    "equations": "h=x@W.T; yhat=ReLU(h@W+b)",
+    "full_width": 6, "compressed_width": 2,
+    "full_parameters": 42, "compressed_parameters": 18,
+    "activation_derivative_at_zero": 0,
+    "weights": "Tied encoder/decoder. No additional units, trained feature dictionary, hexagon, feature-normalized initialization or post-hoc rotation."
+  },
+  "training": {
+    "seeds": [1103, 2207, 3301, 4409, 5519],
+    "default_seed": 1103,
+    "initialization": "Full encoder independent Gaussian SD 0.4; full bias zero.",
+    "full_steps": 12000, "compressed_steps": 30000,
+    "batch_size": 128,
+    "optimizer": "Adam beta1=.9 beta2=.999 epsilon=1e-8",
+    "learning_rate": 0.003, "final_learning_rate": 0.0003, "decay_fraction": 0.8,
+    "checkpoint": "Final scheduled step only; validation is diagnostic and a full-width prerequisite, not checkpoint selection.",
+    "compression": "Gaussian draw shape (6,2), seed=model_seed+10000. Reduced QR, signs fixed to positive diagonal R. Projection P=Q.T. Initial compressed W=P@full_W; reset compressed decoder bias to zero before fine-tuning. This is a projected encoder warm start, not an exactly preserved full-model function.",
+    "compression_prerequisite": "Finish all five full-width runs. Proceed only if every full-width model passes every full-width gate on VALIDATION. Otherwise stop and retain all outcomes.",
+    "retries": 0,
+    "test_access": "Do not evaluate TEST/PAIR_TEST/SPARSE_TEST/EDIT_TEST until all trained parameters are frozen. No outcome-guided change to support, initialization, optimizer, gates, or seeds."
+  },
+  "pilot": {
+    "seed": 99101, "steps": 1000,
+    "purpose": "Measure CPU runtime and validate gradients only. Pilot weights discarded; no feature recovery or TEST inspection.",
+    "runtime_budget_seconds": 120,
+    "runtime_action": "If projected training cost exceeds budget, stop before final fits; do not silently reduce the study."
+  },
+  "full_width_gates": {
+    "active_relative_rmse_max": 0.02,
+    "combined_inactive_relative_rmse_max": 0.02,
+    "active_amplitude_r2_min": 0.95,
+    "zero_output_max": 0.02
+  },
+  "compressed_gates": {
+    "active_relative_rmse_max": 0.25,
+    "combined_inactive_relative_rmse_max": 0.25,
+    "active_amplitude_r2_min_exclusive": 0.0,
+    "mse_ratio_to_train_fit_pca_max": 0.5,
+    "mse_ratio_to_train_fit_coordinate_reference_max": 0.5,
+    "encoder_rank": 2,
+    "column_norm_min": 0.001,
+    "positive_pair_cosine_max": 0.9999,
+    "scope": "Chosen accuracy criteria on held-out singleton amplitudes; not a universal definition of superposition. Antipodal feature directions are allowed."
+  },
+  "study_gate": "All five full-width TEST controls pass and at least four of five compressed TEST models pass. Report every seed and actual counts regardless.",
+  "baselines": "Fit centered rank-two PCA and the best two-coordinate retention reference on TRAIN only. ReLU-clip PCA reconstruction. Compare identical TEST arrays. Also evaluate every projected warm start before fine-tuning and the analytic six-dimensional identity circuit.",
+  "edits": "Use fresh held-out amplitudes. Add known encoded feature directions at baseline and on other singleton backgrounds, decode, measure target recovery and collateral output changes, then remove the inserted direction. Separately zero each latent coordinate. Encoding equality alone is an implementation identity; decoded selectivity is the measured result.",
+  "scope": "Learned compression of specified sparse economic response data. Pair failures are reconstruction errors outside singleton training support; compare full-width controls before attributing differences to compression. No human comprehension experiment, general hardness theorem or width-scaling claim."
+}

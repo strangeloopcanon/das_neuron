@@ -1,0 +1,302 @@
+{
+  "protocol_sha256": "9288d2aa5386aeeed42bbc418ceff4d08e3da05ffacdc74ad07fe06551c4a5c9",
+  "archive_sha256": "faa0b236ec05ec16718f920598e3a8c0684af686b0c5f7af32474e5367dd56ba",
+  "array_sha256": "f14e8b4a53012e07d283b5a13550e2c26a9db9e6f3064b6da3b3381e37b6dd81",
+  "rows": 24576,
+  "models": [
+    {
+      "seed": 1103,
+      "model_sha256": "0619efe27b79014e2ac5cbd62814ae4f45b3e43a288fd192e69a9c90eb290678",
+      "per_feature": [
+        {
+          "feature": 0,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.058268592507594724,
+          "combined_inactive_relative_rmse": 0.1407937886362217,
+          "active_amplitude_r2": 0.7399216092153227,
+          "passes": true
+        },
+        {
+          "feature": 1,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05902923212777181,
+          "combined_inactive_relative_rmse": 0.14672343274757838,
+          "active_amplitude_r2": 0.7362249792648616,
+          "passes": true
+        },
+        {
+          "feature": 2,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05837211971178524,
+          "combined_inactive_relative_rmse": 0.15055275432756463,
+          "active_amplitude_r2": 0.7394438757978432,
+          "passes": true
+        },
+        {
+          "feature": 3,
+          "selected_on_validation": false,
+          "active_relative_rmse": 0.8553821951735265,
+          "combined_inactive_relative_rmse": 0.0,
+          "active_amplitude_r2": -55.101449868827046,
+          "passes": false
+        },
+        {
+          "feature": 4,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05925871906747097,
+          "combined_inactive_relative_rmse": 0.15309206965651787,
+          "active_amplitude_r2": 0.7324733666143888,
+          "passes": true
+        },
+        {
+          "feature": 5,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05805998868032867,
+          "combined_inactive_relative_rmse": 0.1431686173581062,
+          "active_amplitude_r2": 0.7407588657495285,
+          "passes": true
+        }
+      ],
+      "selected_count": 5,
+      "confirmed_count": 5,
+      "confirmation_pass": true
+    },
+    {
+      "seed": 2207,
+      "model_sha256": "8ef2a53c5d85297ef9838b859cb33055cfd330358d2b6283cf746d38339cf78d",
+      "per_feature": [
+        {
+          "feature": 0,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05893699209039542,
+          "combined_inactive_relative_rmse": 0.15744733004718497,
+          "active_amplitude_r2": 0.7339206636206623,
+          "passes": true
+        },
+        {
+          "feature": 1,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05855590472336186,
+          "combined_inactive_relative_rmse": 0.15427850352232575,
+          "active_amplitude_r2": 0.7404381928599881,
+          "passes": true
+        },
+        {
+          "feature": 2,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.058847193669585185,
+          "combined_inactive_relative_rmse": 0.14834883664338036,
+          "active_amplitude_r2": 0.7351854336271839,
+          "passes": true
+        },
+        {
+          "feature": 3,
+          "selected_on_validation": false,
+          "active_relative_rmse": 0.8497260831015606,
+          "combined_inactive_relative_rmse": 0.0,
+          "active_amplitude_r2": -54.36197462051177,
+          "passes": false
+        },
+        {
+          "feature": 4,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05835168868401326,
+          "combined_inactive_relative_rmse": 0.15384267992919928,
+          "active_amplitude_r2": 0.7406003635507985,
+          "passes": true
+        },
+        {
+          "feature": 5,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05870010266939361,
+          "combined_inactive_relative_rmse": 0.148752378193624,
+          "active_amplitude_r2": 0.7350110642179604,
+          "passes": true
+        }
+      ],
+      "selected_count": 5,
+      "confirmed_count": 5,
+      "confirmation_pass": true
+    },
+    {
+      "seed": 3301,
+      "model_sha256": "7494d5062b3e839f683f7dcb811b26eec39f14dee5802e46bdc7d84af80f4179",
+      "per_feature": [
+        {
+          "feature": 0,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.058233470554935884,
+          "combined_inactive_relative_rmse": 0.1499795681855673,
+          "active_amplitude_r2": 0.7402350442098473,
+          "passes": true
+        },
+        {
+          "feature": 1,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.058653433838860666,
+          "combined_inactive_relative_rmse": 0.14867784166220016,
+          "active_amplitude_r2": 0.7395728346886843,
+          "passes": true
+        },
+        {
+          "feature": 2,
+          "selected_on_validation": false,
+          "active_relative_rmse": 0.8509546188772917,
+          "combined_inactive_relative_rmse": 0.0,
+          "active_amplitude_r2": -54.3736506388176,
+          "passes": false
+        },
+        {
+          "feature": 3,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05818465005945477,
+          "combined_inactive_relative_rmse": 0.15092827343593043,
+          "active_amplitude_r2": 0.7404204195054251,
+          "passes": true
+        },
+        {
+          "feature": 4,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.058653923841809515,
+          "combined_inactive_relative_rmse": 0.15347088108778517,
+          "active_amplitude_r2": 0.7379062606323759,
+          "passes": true
+        },
+        {
+          "feature": 5,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05881946009170126,
+          "combined_inactive_relative_rmse": 0.15397658554060015,
+          "active_amplitude_r2": 0.7339323420161648,
+          "passes": true
+        }
+      ],
+      "selected_count": 5,
+      "confirmed_count": 5,
+      "confirmation_pass": true
+    },
+    {
+      "seed": 4409,
+      "model_sha256": "08de83856fa0f5fbd87bcf9931ba261b0d5911fa6afc06adb48d69382b90fb54",
+      "per_feature": [
+        {
+          "feature": 0,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05824954119150838,
+          "combined_inactive_relative_rmse": 0.14835585431078102,
+          "active_amplitude_r2": 0.740091650241135,
+          "passes": true
+        },
+        {
+          "feature": 1,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05857251675993429,
+          "combined_inactive_relative_rmse": 0.15541351055362118,
+          "active_amplitude_r2": 0.7402908990258557,
+          "passes": true
+        },
+        {
+          "feature": 2,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.059279901963893364,
+          "combined_inactive_relative_rmse": 0.15881927629845233,
+          "active_amplitude_r2": 0.7312767087519234,
+          "passes": true
+        },
+        {
+          "feature": 3,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05876531317005724,
+          "combined_inactive_relative_rmse": 0.15431176332916385,
+          "active_amplitude_r2": 0.7352135343512887,
+          "passes": true
+        },
+        {
+          "feature": 4,
+          "selected_on_validation": false,
+          "active_relative_rmse": 0.8487323308518249,
+          "combined_inactive_relative_rmse": 0.0,
+          "active_amplitude_r2": -53.87872305409262,
+          "passes": false
+        },
+        {
+          "feature": 5,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.0583490484862914,
+          "combined_inactive_relative_rmse": 0.14893441197778606,
+          "active_amplitude_r2": 0.7381711032008849,
+          "passes": true
+        }
+      ],
+      "selected_count": 5,
+      "confirmed_count": 5,
+      "confirmation_pass": true
+    },
+    {
+      "seed": 5519,
+      "model_sha256": "a32f897f5835ab7641fe6b3f1fad0c740367cec2ea003c37456031f0f95a80eb",
+      "per_feature": [
+        {
+          "feature": 0,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.058307264883500964,
+          "combined_inactive_relative_rmse": 0.1463949178931367,
+          "active_amplitude_r2": 0.7395762709630801,
+          "passes": true
+        },
+        {
+          "feature": 1,
+          "selected_on_validation": false,
+          "active_relative_rmse": 0.8529235738345229,
+          "combined_inactive_relative_rmse": 0.0,
+          "active_amplitude_r2": -54.070577936006096,
+          "passes": false
+        },
+        {
+          "feature": 2,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.058156696721372504,
+          "combined_inactive_relative_rmse": 0.14962904118851095,
+          "active_amplitude_r2": 0.7413634979023306,
+          "passes": true
+        },
+        {
+          "feature": 3,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05817708093957334,
+          "combined_inactive_relative_rmse": 0.14682789753967782,
+          "active_amplitude_r2": 0.7404879514460273,
+          "passes": true
+        },
+        {
+          "feature": 4,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05852746462380937,
+          "combined_inactive_relative_rmse": 0.15270587437484834,
+          "active_amplitude_r2": 0.7390352026487423,
+          "passes": true
+        },
+        {
+          "feature": 5,
+          "selected_on_validation": true,
+          "active_relative_rmse": 0.05820292500644615,
+          "combined_inactive_relative_rmse": 0.1508421334560172,
+          "active_amplitude_r2": 0.7394808569701399,
+          "passes": true
+        }
+      ],
+      "selected_count": 5,
+      "confirmed_count": 5,
+      "confirmation_pass": true
+    }
+  ],
+  "primary_all_six_result_unchanged": {
+    "full_validation_pass_count": 5,
+    "full_test_pass_count": 5,
+    "compressed_test_pass_count": 0,
+    "compressed_test_count": 5,
+    "study_pass": false
+  },
+  "confirmed_model_count": 5,
+  "confirmation_pass": true
+}

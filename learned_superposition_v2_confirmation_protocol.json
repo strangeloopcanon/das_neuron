@@ -1,0 +1,82 @@
+{
+  "stage": "Post-hoc discovery confirmation; not the original six-feature primary test",
+  "original_results_sha256": "5f61601f54cab8120aad0ae0cbb5888196a599e333b0b6806fd94d24b207acfa",
+  "original_protocol_sha256": "cf241ef05938da343d0deaa1dd0d3619a853b6649ed263ac4e4d42eb0ad2f4be",
+  "source_sha256": "219007df7d7e187b15a8d33da0a0c5d4caa6c18b63017467ae6e1481b46d89da",
+  "model_selection": "All five compressed seeds retained. For each frozen model, select features solely by the original compressed accuracy/leakage/active-amplitude-R2 criteria on VALIDATION.",
+  "selection": [
+    {
+      "seed": 1103,
+      "model_sha256": "0619efe27b79014e2ac5cbd62814ae4f45b3e43a288fd192e69a9c90eb290678",
+      "features_selected_on_validation": [
+        0,
+        1,
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "seed": 2207,
+      "model_sha256": "8ef2a53c5d85297ef9838b859cb33055cfd330358d2b6283cf746d38339cf78d",
+      "features_selected_on_validation": [
+        0,
+        1,
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "seed": 3301,
+      "model_sha256": "7494d5062b3e839f683f7dcb811b26eec39f14dee5802e46bdc7d84af80f4179",
+      "features_selected_on_validation": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "seed": 4409,
+      "model_sha256": "08de83856fa0f5fbd87bcf9931ba261b0d5911fa6afc06adb48d69382b90fb54",
+      "features_selected_on_validation": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "seed": 5519,
+      "model_sha256": "a32f897f5835ab7641fe6b3f1fad0c740367cec2ea003c37456031f0f95a80eb",
+      "features_selected_on_validation": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "new_holdout": {
+    "seed": 978311,
+    "per_feature": 4096,
+    "amplitude": [
+      0.8,
+      1.2
+    ],
+    "feature_groups": 6
+  },
+  "criteria": {
+    "required_retained_features_per_model": 5,
+    "required_model_count": 5,
+    "active_relative_rmse_max": 0.25,
+    "combined_inactive_relative_rmse_max": 0.25,
+    "active_amplitude_r2_min_exclusive": 0
+  },
+  "scope": "Confirm at least five specified response features per model are selectively recoverable from two latent coordinates. All six features evaluated; original all-six primary gate remains failed. No fitting or hyperparameter changes.",
+  "no_retraining": true
+}

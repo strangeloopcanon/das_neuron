@@ -1,7 +1,7 @@
 {
   ".github/workflows/pages.yml": {
-    "bytes": 1438,
-    "sha256": "1c2bccd202fb52f173f3ab836071e25dbabe3f9bba334db252470659d8c1a34c"
+    "bytes": 1549,
+    "sha256": "b4471e0766e11e09572e43e8acdfbbac351588c58a451359136c3541ae58e41f"
   },
   ".gitignore": {
     "bytes": 45,
@@ -16,12 +16,20 @@
     "sha256": "356e96a879770f899a572b352b4f1fe0dd95df34795446f8a5098e47ca7b5598"
   },
   "README.md": {
-    "bytes": 5871,
-    "sha256": "7028c966247d1da99b44fdbbf58e0c1e4b250a181541384d5c8a6c8bdb9779eb"
+    "bytes": 7113,
+    "sha256": "9aafbf8350846326ea08caea2229f5efaf2ddd3fd5f16351691007514ebf79da"
   },
   "build_blog.py": {
     "bytes": 16404,
     "sha256": "d88544c1e8f397653e282c8f22a413a3aeae4345b4e7d7db726c961053c924f4"
+  },
+  "build_learned_superposition_page.py": {
+    "bytes": 1179,
+    "sha256": "d1a2caba7cc0ca3f87ed7be052b68ec78d79e8b90f4d2877267fffab4109ed28"
+  },
+  "build_learned_superposition_readout.py": {
+    "bytes": 11549,
+    "sha256": "c1a88c5572f87f95f4dbda1a921d9c5a6beedd5a96319f994b8a511726ba1aad"
   },
   "build_response_superposition_page.py": {
     "bytes": 924,
@@ -50,6 +58,62 @@
   "index.html": {
     "bytes": 1077726,
     "sha256": "b6ebba107a57fb176e962399e0d2cf5cc8b2cc4ddb2e1c1ac882d05368342002"
+  },
+  "learned_superposition.html": {
+    "bytes": 44508,
+    "sha256": "fed1c07579ab3a083eaacb7e4458c4d40e616d5a5a11aad331b34d23d7ceed2e"
+  },
+  "learned_superposition.js": {
+    "bytes": 5672,
+    "sha256": "1ebd3540ff45f26b4a53c7e9bf9ac1ee5238850f1455bf9cf4980c2e4fd48f5b"
+  },
+  "learned_superposition_template.html": {
+    "bytes": 6400,
+    "sha256": "95660cc3cb0003c8cb6dbe70c4eaafe56ea5408d120336fca17b5ef753453430"
+  },
+  "learned_superposition_v2.py": {
+    "bytes": 19239,
+    "sha256": "72de403c7e6e1f5eff5db9987a76072aca6fba547d8a92343e38419ee26dd2e5"
+  },
+  "learned_superposition_v2_confirmation.py": {
+    "bytes": 5842,
+    "sha256": "219007df7d7e187b15a8d33da0a0c5d4caa6c18b63017467ae6e1481b46d89da"
+  },
+  "learned_superposition_v2_confirmation_data.npz": {
+    "bytes": 202797,
+    "sha256": "faa0b236ec05ec16718f920598e3a8c0684af686b0c5f7af32474e5367dd56ba"
+  },
+  "learned_superposition_v2_confirmation_protocol.json": {
+    "bytes": 2366,
+    "sha256": "9288d2aa5386aeeed42bbc418ceff4d08e3da05ffacdc74ad07fe06551c4a5c9"
+  },
+  "learned_superposition_v2_confirmation_results.json": {
+    "bytes": 10276,
+    "sha256": "fdb27544d7c9005fea0784100884b25c8f65d1c15b2318dc4e928d3fbc3d1438"
+  },
+  "learned_superposition_v2_data.npz": {
+    "bytes": 306325,
+    "sha256": "e5af1afb5787f1de7c84cbf06ecd688e974786447850a1db81843a987dc39357"
+  },
+  "learned_superposition_v2_pilot.json": {
+    "bytes": 427,
+    "sha256": "9d1b0bdc0a094465b2a842defe6ea16da84ecc1f5680b6e95a6dfb82b7845fed"
+  },
+  "learned_superposition_v2_protocol.json": {
+    "bytes": 5139,
+    "sha256": "cf241ef05938da343d0deaa1dd0d3619a853b6649ed263ac4e4d42eb0ad2f4be"
+  },
+  "learned_superposition_v2_readout.md": {
+    "bytes": 6293,
+    "sha256": "791508f004fb0db8633b4c29f56da76235cce9b0a283f6aec98df229ca0806b6"
+  },
+  "learned_superposition_v2_report.md": {
+    "bytes": 4375,
+    "sha256": "4ddafdac26653c0a5377ade687a76faba1cd65d764ebf225a4d7bd5dcb688cdf"
+  },
+  "learned_superposition_v2_results.json": {
+    "bytes": 311178,
+    "sha256": "5f61601f54cab8120aad0ae0cbb5888196a599e333b0b6806fd94d24b207acfa"
   },
   "nonlinear_teacher.py": {
     "bytes": 18391,
@@ -87,9 +151,29 @@
     "bytes": 3028,
     "sha256": "ea853b5ad3d06b48e26226309375e1ab78fd3b331760c09634681d2b08af295b"
   },
+  "output/learned_v2/geometry.svg": {
+    "bytes": 1979,
+    "sha256": "c56428948df982ce4c70a9c5dc00e1df6e9d299b54f6f814b2a7201962f50bc9"
+  },
+  "output/learned_v2/learned-features.png": {
+    "bytes": 145644,
+    "sha256": "a27a6d352261c5f21c9aba359ae4f893ee7c10f97a98d4cf5e6ae2607174cc60"
+  },
+  "output/learned_v2/learned-features.svg": {
+    "bytes": 29126,
+    "sha256": "b29a657ef033bb0367acf98d814781a829743d58ee5e5f5e05a8900966273695"
+  },
+  "output/learned_v2/responses.svg": {
+    "bytes": 2810,
+    "sha256": "e4c81fdcbb4012709d85fb97413b266a264e69467c5336cdb26c28ccbf18acc0"
+  },
   "output/pdf/neuron-labels.pdf": {
     "bytes": 8219,
     "sha256": "3d43ec44a2300a9771aac648d3de07ce3d44c61d156ba9895a37b69c06a6078c"
+  },
+  "requirements-plots.txt": {
+    "bytes": 40,
+    "sha256": "7da43c27202aedb3dc2eafac35857d84878d4eee6c543639b48d25d921ee10c0"
   },
   "requirements.txt": {
     "bytes": 29,
@@ -206,6 +290,14 @@
   "verify_constructive_superposition.py": {
     "bytes": 3829,
     "sha256": "eac68e472e80f6601782fe01001d5b5a963f79a0bf3a074664b2c7174a9651a8"
+  },
+  "verify_learned_superposition_ui.js": {
+    "bytes": 3078,
+    "sha256": "a3ad210b56c823de2610f1c1b0477d1427a8019f1116618b7e9e6bef3cbff2fe"
+  },
+  "verify_learned_superposition_v2.py": {
+    "bytes": 16923,
+    "sha256": "dad01e446df6c14d1c0113c602630650cce13b99503b9925f596893462847278"
   },
   "verify_response_superposition.py": {
     "bytes": 5224,

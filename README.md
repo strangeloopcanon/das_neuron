@@ -2,6 +2,10 @@
 
 **Economic equations, labelled neurons, and the computation between them.**
 
+**New local experiment:** [five learned features in two hidden coordinates](learned_superposition.html) · [verified readout](learned_superposition_v2_readout.md).
+
+[![An 18-parameter trained network learns five sector-response directions in two coordinates; the sixth feature is reconstructed poorly.](output/learned_v2/learned-features.svg)](learned_superposition.html)
+
 [**Open the interactive policy circuit →**](https://strangeloopcanon.github.io/das_neuron/system.html) · [**Explore six features in two coordinates →**](https://strangeloopcanon.github.io/das_neuron/response_superposition.html) · [Read the short essay](output/blog/neuron-labels.html)
 
 [![Consumption contributions from all 16 final hidden neurons. Click to change capital, shocks, output, and network.](output/blog/contributions.svg)](https://strangeloopcanon.github.io/das_neuron/system.html)
@@ -37,6 +41,8 @@ Labels use a separate DISCOVERY sample. Predictive accuracy uses TEST data. Neur
 
 ## Six economic features in two coordinates
 
+The new learned study uses **18 parameters**, fewer than the constructed circuit below. All five full-width controls learn all six features. Every two-coordinate compressed model retains five, confirmed on fresh data. The original all-six criterion remains unmet. [Read the learned result and confirmation](learned_superposition_v2_readout.md).
+
 A second circuit gives an exact, **constructed superposition example**. Six independent growth economies supply six known consumption-response features. They share a two-dimensional linear representation:
 
 $$h=Ex,\qquad \hat{x}=\operatorname{ReLU}(2E^\top h-\mathbf{1}).$$
@@ -63,9 +69,11 @@ python -B verify_richer.py
 python -B verify_system.py
 python -B verify_response_superposition.py
 python -B verify_constructive_superposition.py
+python -B verify_learned_superposition_v2.py
 node verify_richer_ui.js
 node verify_system_ui.js
 node verify_response_superposition_ui.js
+node verify_learned_superposition_ui.js
 ```
 
 The Python checks reconstruct the economic and neural calculations. The JavaScript checks execute the shipped controls and all 64 constructed-circuit states. They do not retrain models or claim browser layout coverage.
@@ -78,10 +86,13 @@ Rebuild the pages and essay from the saved results:
 python build_system_page.py
 python build_richer_page.py
 python build_response_superposition_page.py
+python build_learned_superposition_page.py
 python build_blog.py
 ```
 
 Training and teacher generation are separate scripts. They replace their corresponding result files when run. The frozen protocols, seeds, all saved models, and verification code are included.
+
+The learned study is frozen in `learned_superposition_v2_protocol.json`. Its original six-feature result and later five-feature confirmation are separate files. `learned_superposition_v2.py --pilot` measures runtime before `--run` trains. The confirmation has no training step. To redraw the scientific figure, install `requirements-plots.txt` and run `build_learned_superposition_readout.py`.
 
 ## Reading
 
