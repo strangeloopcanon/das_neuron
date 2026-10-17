@@ -2,7 +2,7 @@
 
 **Economic equations, labelled neurons, and the computation between them.**
 
-**Main local experiment: [predict unseen interventions in the 387-parameter DSGE circuit](dsge_prediction.html).**
+**Main experiment: [predict unseen interventions in the 387-parameter DSGE circuit](dsge_prediction.html).**
 
 [![Automated intervention errors by edit family. Fixed-gate calculations miss some first-layer and weight-edit responses; exact network evaluation predicts all 1,200 cases. Human participants: zero.](output/dsge_prediction/intervention-errors.svg)](dsge_prediction.html)
 
@@ -12,7 +12,7 @@ The interactive challenge supplies neuron labels, every weight and bias, normali
 
 [Protocol](dsge_prediction_protocol.json) · [Results and limits](dsge_prediction_report.md) · [Participant instructions](dsge_prediction_study.md) · [Explore the circuit](system.html) · [Learned superposition companion](learned_superposition.html) · [Short essay](output/blog/neuron-labels.html)
 
-GitHub displays a static chart. Open the linked HTML for the interactive study. This revision is local and has not been published.
+GitHub displays a static chart. Open the linked HTML for the interactive study. The public demo runs offline after loading. It does not upload participant responses.
 
 ## The question
 
