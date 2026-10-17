@@ -16,8 +16,8 @@
     "sha256": "356e96a879770f899a572b352b4f1fe0dd95df34795446f8a5098e47ca7b5598"
   },
   "README.md": {
-    "bytes": 5831,
-    "sha256": "4e0a0784cc23cb7667f6e85ca62b81723229d596b424da26e87837ed8d6abe2d"
+    "bytes": 5871,
+    "sha256": "7028c966247d1da99b44fdbbf58e0c1e4b250a181541384d5c8a6c8bdb9779eb"
   },
   "build_blog.py": {
     "bytes": 16404,
@@ -94,6 +94,10 @@
   "requirements.txt": {
     "bytes": 29,
     "sha256": "e4bb6f49e36bf68148cb639e5082c1098260f9eb37ca44d05dd384eda7a4daee"
+  },
+  "response_partitions.npz": {
+    "bytes": 69194,
+    "sha256": "8b9d8b215c0ea25cb6b2f7fd42cf9b59ea4e4e348612787c402c198547256fe6"
   },
   "response_superposition.html": {
     "bytes": 13768,
@@ -204,8 +208,8 @@
     "sha256": "eac68e472e80f6601782fe01001d5b5a963f79a0bf3a074664b2c7174a9651a8"
   },
   "verify_response_superposition.py": {
-    "bytes": 4838,
-    "sha256": "c6bd49df660e16e504ecf532e7282028dc600a91312af3b7e9e1a961c8be3828"
+    "bytes": 5224,
+    "sha256": "01d3410279d3d002e46fa08b9750d89d85e764af4f20023de98b5ac7616eee4e"
   },
   "verify_response_superposition_ui.js": {
     "bytes": 2103,

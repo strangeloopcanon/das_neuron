@@ -13,7 +13,14 @@ d=p['data'];rng=np.random.default_rng(d['train_seed']);n=d['train_n'];train=np.z
 rng=np.random.default_rng(d['test_seed']);ids=np.repeat(np.arange(6),128);single=np.zeros((768,6));single[np.arange(768),ids]=rng.uniform(.8,1.2,768);pair=np.zeros((1024,6))
 for row in pair:row[rng.choice(6,2,replace=False)]=rng.uniform(.8,1.2,2)
 sparse=(rng.random((4096,6))<.05)*rng.uniform(.8,1.2,(4096,6));datasets=dict(train=train,singleton=single,pair=pair,sparse=sparse)
-for name,x in datasets.items():assert hashlib.sha256(np.asarray(x,dtype='<f8').tobytes()).hexdigest()==r['dataset_hashes'][name]
+with np.load(R/'response_partitions.npz',allow_pickle=False) as archive:
+ for name,x in list(datasets.items()):
+  frozen=archive[name]
+  assert np.array_equal(x>0,frozen>0),name+' feature membership'
+  np.testing.assert_allclose(x,frozen,rtol=2e-14,atol=2e-14,err_msg=name+' regenerated amplitudes')
+  assert hashlib.sha256(np.asarray(frozen,dtype='<f8').tobytes()).hexdigest()==r['dataset_hashes'][name]
+  datasets[name]=frozen
+train,single,pair,sparse=(datasets[k] for k in ('train','singleton','pair','sparse'))
 mean=train.mean(0);_,_,vt=np.linalg.svd(train-mean,full_matrices=False);basis=vt[:2];coord=np.argsort(np.sum(train*train,0))[-2:]
 def met(x,y):return {'mse':float(np.mean((x-y)**2)),'relative_rmse':float(np.linalg.norm(x-y)/np.linalg.norm(x))}
 for name,x in datasets.items():
