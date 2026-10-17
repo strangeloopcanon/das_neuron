@@ -172,19 +172,27 @@ def verify_teacher(teacher,report):
 
 def partitions(protocol,teacher,provenance):
     data={};seen=set()
+    archive=np.load(ROOT/'richer_partitions.npz',allow_pickle=False)
     for name,spec in protocol['data'].items():
         if not isinstance(spec,dict):continue
         rng=np.random.default_rng(spec['seed']);k=rng.uniform(.5,1.8,spec['n'])*teacher.parameters['kss']
         state=rng.choice(21,spec['n'],p=teacher.stationary)
         raw=np.column_stack((k,teacher.state_features[state]));pol=teacher.policy(k,state)
-        y=np.column_stack([pol[key] for key in OUTPUTS]);membership={(float(a).hex(),int(b)) for a,b in zip(k,state)}
+        computed_y=np.column_stack([pol[key] for key in OUTPUTS])
+        frozen_k=archive[name+'_capital'];frozen_state=archive[name+'_state'];y=archive[name+'_y']
+        close(k,frozen_k,'regenerated capital '+name,atol=2e-14,rtol=2e-14)
+        check(np.array_equal(state,frozen_state),'regenerated shock membership '+name)
+        close(computed_y,y,'recomputed economic outputs '+name,atol=2e-12,rtol=2e-12)
+        k,state=frozen_k,frozen_state;raw=np.column_stack((k,teacher.state_features[state]))
+        membership={(float(a).hex(),int(b)) for a,b in zip(k,state)}
         check(len(membership)==len(k) and not membership&seen,'partition disjointness '+name);seen|=membership
         check(array_sha(k,state.astype(np.int64),y)==provenance['partitions'][name]['sha256'],'partition digest '+name)
         close(np.bincount(state,minlength=21),provenance['partitions'][name]['shock_state_counts'],'partition state counts '+name)
         check(spec['n']==provenance['partitions'][name]['n'] and spec['seed']==provenance['partitions'][name]['seed'],'partition specification '+name)
         data[name]=dict(raw=raw,state=state,y=y)
     train=data['TRAIN'];norm=dict(input_mean=train['raw'].mean(0),input_std=train['raw'].std(0),output_mean=train['y'].mean(0),output_std=train['y'].std(0))
-    for key,value in norm.items():close(value,provenance['normalization'][key],'TRAIN normalization '+key)
+    for key,value in norm.items():close(value,provenance['normalization'][key],'TRAIN normalization '+key,atol=2e-14,rtol=2e-14)
+    norm={key:np.asarray(value) for key,value in provenance['normalization'].items()}
     for split in data.values():
         split['x']=(split['raw']-norm['input_mean'])/norm['input_std']
         split['yn']=(split['y']-norm['output_mean'])/norm['output_std']

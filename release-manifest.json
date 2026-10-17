@@ -16,8 +16,8 @@
     "sha256": "356e96a879770f899a572b352b4f1fe0dd95df34795446f8a5098e47ca7b5598"
   },
   "README.md": {
-    "bytes": 5561,
-    "sha256": "03985ac8caa10fca8096f53476a60c9bf1348b84c6025e74f582c056b6e984b4"
+    "bytes": 5831,
+    "sha256": "4e0a0784cc23cb7667f6e85ca62b81723229d596b424da26e87837ed8d6abe2d"
   },
   "build_blog.py": {
     "bytes": 16404,
@@ -135,6 +135,10 @@
     "bytes": 16271,
     "sha256": "38a9c70c634c724b0dbec1a21b3d1af1882ed0cff81d3ff052a17daea503d3d0"
   },
+  "richer_partitions.npz": {
+    "bytes": 669226,
+    "sha256": "5d9b09c6f85c87fa6c54d3a2479a388468d468a3ae719569ada964960f039c7b"
+  },
   "richer_pilot.json": {
     "bytes": 1268,
     "sha256": "2e90405a2e7c1fafaced62c6e5109951aabe75b41afadc7a3c77044c451478c9"
@@ -208,16 +212,16 @@
     "sha256": "d75e3d73a58456a3de2943f7eb0304615e61e9fa457043b834db5f72af69bf9d"
   },
   "verify_richer.py": {
-    "bytes": 21126,
-    "sha256": "9b731f2cdb47764508c351017a541fb90eadd962023dd8c00346c5e89a3931b4"
+    "bytes": 21761,
+    "sha256": "652049a0aa590ca49032d96ab25254d0b5a3f037aa4232eccb3762403b783fd2"
   },
   "verify_richer_ui.js": {
     "bytes": 4580,
     "sha256": "6ee96160030eebbd0cf8fee8467518cb1b29f4a98074caab611b8482685a01de"
   },
   "verify_system.py": {
-    "bytes": 20034,
-    "sha256": "61be3b4c9aec63c73f69ba62abd58aada7f816e5fd5cd2a751bed90f98a0a762"
+    "bytes": 20751,
+    "sha256": "ec988b5e9a5f7ed6f48eddf5a56ea0f7269d682c313e902c4d40835a091bf34b"
   },
   "verify_system_ui.js": {
     "bytes": 7436,

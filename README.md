@@ -70,6 +70,8 @@ node verify_response_superposition_ui.js
 
 The Python checks reconstruct the economic and neural calculations. The JavaScript checks execute the shipped controls and all 64 constructed-circuit states. They do not retrain models or claim browser layout coverage.
 
+Original training partitions are retained byte for byte in `richer_partitions.npz` and checked against their original hashes. Economic outputs are independently recomputed with a numerical tolerance, so Mac/Linux rounding differences do not masquerade as changed data.
+
 Rebuild the pages and essay from the saved results:
 
 ```sh

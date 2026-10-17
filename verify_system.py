@@ -117,6 +117,7 @@ def verify():
 
     # Recreate all split memberships and TRAIN normalization from saved protocol.
     data, membership, all_states = {}, {}, set()
+    archive = np.load(ROOT/'richer_partitions.npz', allow_pickle=False)
     for name, spec in protocol['data'].items():
         if not isinstance(spec, dict):
             continue
@@ -125,7 +126,14 @@ def verify():
         states = rng.choice(len(teacher.P), spec['n'], p=teacher.stationary)
         raw = np.column_stack((capital, teacher.state_features[states]))
         pol = teacher.policy(capital, states)
-        y = np.column_stack([pol[k] for k in ('c', 'labor', 'investment')])
+        computed_y = np.column_stack([pol[k] for k in ('c', 'labor', 'investment')])
+        frozen_capital, frozen_states = archive[name+'_capital'], archive[name+'_state']
+        y = archive[name+'_y']
+        close(capital, frozen_capital, 'regenerated capital '+name, atol=2e-14, rtol=2e-14)
+        check(np.array_equal(states, frozen_states), 'regenerated shock membership '+name)
+        close(computed_y, y, 'recomputed economic outputs '+name, atol=2e-12, rtol=2e-12)
+        capital, states = frozen_capital, frozen_states
+        raw = np.column_stack((capital, teacher.state_features[states]))
         keys = {(float(k).hex(), int(s)) for k, s in zip(capital, states)}
         check(len(keys) == len(capital) and not keys & all_states, 'unique disjoint '+name)
         all_states |= keys
@@ -137,8 +145,9 @@ def verify():
     norm = dict(input_mean=tr['raw'].mean(0), input_std=tr['raw'].std(0),
                 output_mean=tr['y'].mean(0), output_std=tr['y'].std(0))
     for key, value in norm.items():
-        close(value, saved['provenance']['normalization'][key], 'analysis normalization '+key, atol=0, rtol=0)
-        close(value, frozen['provenance']['normalization'][key], 'frozen normalization '+key, atol=0, rtol=0)
+        close(value, saved['provenance']['normalization'][key], 'analysis normalization '+key, atol=2e-14, rtol=2e-14)
+        close(value, frozen['provenance']['normalization'][key], 'frozen normalization '+key, atol=2e-14, rtol=2e-14)
+    norm = {key:np.asarray(value) for key,value in frozen['provenance']['normalization'].items()}
     discovery = (data['DISCOVERY']['raw']-norm['input_mean'])/norm['input_std']
     ratios = np.linspace(.5, 1.8, 301)
     close(saved['capital_grid_over_kss'], ratios, 'capital grid', atol=0, rtol=0)
